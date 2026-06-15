@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "var(--font-kanit)", "sans-serif"],
+        sans: ["var(--font-plus-jakarta)", "var(--font-kanit)", "sans-serif"],
         thai: ["var(--font-kanit)", "sans-serif"],
       },
       colors: {
