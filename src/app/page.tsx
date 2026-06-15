@@ -16,13 +16,256 @@ import {
   ArrowRight, 
   ArrowUp,
   Menu,
-  X 
+  X,
+  Globe
 } from "lucide-react";
 
+const translations = {
+  en: {
+    brand: "Peach",
+    navAbout: "About",
+    navProjects: "Projects",
+    navResume: "Resume",
+    navContact: "Contact",
+    heroEyebrow: "Operations Data & Automation Specialist",
+    heroTitleFirst: "Theerapong",
+    heroTitleLast: "Thanarodpaibun",
+    heroDescription: "I turn warehouse movement, inventory records, and planning inputs into practical operating systems: cleaner dashboards, faster reports, and sharper decisions.",
+    heroContact: "Contact",
+    heroViewProjects: "View Projects",
+    statOne: "2d → 1h",
+    statOneDesc: "Reporting Cycle Reduced",
+    statTwo: "100%",
+    statTwoDesc: "Inventory Accuracy",
+    statThree: "Bangkok",
+    statThreeDesc: "Based in",
+    aboutTitle: "Bridging the gap between physical operations and data logic.",
+    aboutP1: "Peach combines hands-on warehouse discipline with planning analytics. The profile is strongest where a team needs someone who understands physical stock movement, can diagnose data gaps, and can build simple tools that make daily decisions faster.",
+    aboutFocus: "Current Focus",
+    aboutFocusText: "Inventory visibility, stock accuracy, and automated reporting flows.",
+    expertiseTitle: "Expertise",
+    caseStudiesTitle: "Case Studies",
+    caseStudiesSubtitle: "Measurable Operational Value",
+    caseStudiesScope: "Read detailed scope",
+    careerTitle: "Career Timeline",
+    educationTitle: "Education",
+    educationDegree: "Bachelor of Logistics and Supply Chain Management",
+    educationHonours: "First Class Honours",
+    labsTitle: "Public Experiments & Labs",
+    contactBannerTitle: "Ready for the next operation?",
+    contactBannerSubtitle: "I'm looking for roles where operations, data, and planning meet. Let's connect and build something efficient.",
+    footerText: "© 2026 Theerapong Thanarodpaibun",
+    backToTop: "Back to top",
+    // Deep data
+    projects: [
+      {
+        title: "Refreshable Reporting Pipeline",
+        category: "Automation / Planning Analytics",
+        description: "Built a Power Query and basic SQL workflow that replaced manual report preparation, reducing a recurring reporting cycle from 2 days to 1 hour. Standardized source extraction and transformation. Reduced manual copy-paste risk and rework. Improved management visibility through reusable dashboards.",
+        tags: ["Power Query", "SQL", "Excel VBA"]
+      },
+      {
+        title: "Spare Parts Location Planning",
+        category: "Warehouse Optimization",
+        description: "Analyzed part movement frequency to classify fast-moving, slow-moving, and dead stock, then reorganized locations to support faster issuing and clearer control.",
+        tags: ["Inventory Optimization", "Logistics", "Process Design"]
+      },
+      {
+        title: "Budget vs Demand Logic Tool",
+        category: "Demand / Capacity Planning",
+        description: "Developed a planning model to compare resource capacity with demand requirements, helping planners reduce manual judgment and align allocation decisions.",
+        tags: ["Forecasting", "Data Analytics", "Planning"]
+      }
+    ],
+    experience: [
+      {
+        role: "Warehouse Specialist",
+        company: "TITANICOM TECH (THAILAND) CO., LTD.",
+        period: "Mar 2026 - Present",
+        description: "Manages IT server spare parts inventory from receiving to issuance, returns, stock counting, location control, and reconciliation between physical stock and records.",
+        details: [
+          "Managed inbound receiving, outbound issuance, returns, cycle counts, and inventory record reconciliation for IT server spare parts.",
+          "Analyzed movement history to classify fast-moving, slow-moving, and dead stock items for clearer storage and replenishment decisions.",
+          "Reorganized warehouse locations around picking frequency to reduce walking distance and improve spare parts accessibility.",
+          "Prepared recurring inventory and operations reports covering stock movement, usage, outstanding items, and warehouse performance indicators.",
+          "Standardized storage arrangement, spare parts handling, and inventory update routines to improve process consistency."
+        ]
+      },
+      {
+        role: "Capacity Planner",
+        company: "HANESBRANDS ROH ASIA LTD.",
+        period: "Feb 2025 - Feb 2026",
+        description: "Built automated reporting and planning tools using Power Query, basic SQL, and Excel logic to improve budget, demand, and resource visibility.",
+        details: [
+          "Built an automated reporting pipeline using Power Query and basic SQL to extract, transform, and refresh planning data.",
+          "Replaced manual report preparation with reusable dashboard logic, reducing report cycle time from 2 days to 1 hour.",
+          "Created a logic-based planning tool to compare budget, demand, and available resources for more consistent allocation decisions.",
+          "Improved planning visibility by standardizing source data, transformation rules, and refresh routines."
+        ]
+      },
+      {
+        role: "Demand Planner",
+        company: "HANESBRANDS ROH ASIA LTD.",
+        period: "Jun 2024 - Dec 2024",
+        description: "Analyzed sales trends, monitored inventory thresholds, initiated production orders, and investigated order cancellations through root cause analysis.",
+        details: [
+          "Analyzed sales trends with Excel Pivot Tables to support demand planning decisions and production order timing.",
+          "Monitored inventory thresholds and initiated production orders for styles below safety levels to reduce stockout risk.",
+          "Investigated order cancellations through root cause analysis, including factory delay and warehouse discrepancy factors.",
+          "Supported planning reviews by connecting demand signals with inventory status and production needs."
+        ]
+      }
+    ],
+    expertise: [
+      {
+        category: "Data Automation",
+        skills: ["Advanced Power Query", "Excel VBA Automation", "Dashboard Tracking", "Reporting Flows"],
+        icon: <Database className="w-5 h-5" />
+      },
+      {
+        category: "Planning",
+        skills: ["Capacity Planning", "Inventory Optimization", "Sales Trend Analysis", "Root Cause Analysis"],
+        icon: <Award className="w-5 h-5" />
+      },
+      {
+        category: "Warehouse Control",
+        skills: ["Spare Parts Control", "Stock Reconciliation", "FIFO Management", "Inbound/Outbound Flow"],
+        icon: <Briefcase className="w-5 h-5" />
+      },
+      {
+        category: "Process Design",
+        skills: ["Dynamics NAV", "Workflow Standardization", "Documentation", "Operating Routines"],
+        icon: <Settings className="w-5 h-5" />
+      }
+    ]
+  },
+  th: {
+    brand: "Peach",
+    navAbout: "เกี่ยวกับ",
+    navProjects: "ผลงาน",
+    navResume: "ประสบการณ์",
+    navContact: "ติดต่อ",
+    heroEyebrow: "Operations Data & Automation Specialist",
+    heroTitleFirst: "Theerapong",
+    heroTitleLast: "Thanarodpaibun",
+    heroDescription: "ผมเปลี่ยนงานคลังสินค้า ข้อมูลสต็อก และข้อมูลวางแผน ให้กลายเป็นระบบทำงานที่ใช้ได้จริง: dashboard ชัดขึ้น, report เร็วขึ้น และตัดสินใจเรื่อง stock ได้คมขึ้น",
+    heroContact: "ติดต่อ",
+    heroViewProjects: "ดูผลงาน",
+    statOne: "2 วัน → 1 ชม.",
+    statOneDesc: "ลดรอบเวลาทำรายงาน",
+    statTwo: "100%",
+    statTwoDesc: "ความแม่นยำสต็อก",
+    statThree: "กรุงเทพฯ",
+    statThreeDesc: "พร้อมรับงาน",
+    aboutTitle: "เชื่อมต่อระหว่างงาน Operations จริงและตรรกะข้อมูล",
+    aboutP1: "Peach มีพื้นฐานจากงานคลังสินค้าจริงร่วมกับทักษะด้าน planning analytics จุดแข็งคือเข้าใจการเคลื่อนไหวของ stock หน้างาน มองเห็นช่องว่างของข้อมูล และสร้าง tool ง่าย ๆ ที่ช่วยให้ทีมตัดสินใจได้เร็วขึ้น",
+    aboutFocus: "โฟกัสตอนนี้",
+    aboutFocusText: "Inventory visibility, stock accuracy และ automated reporting flows",
+    expertiseTitle: "ความเชี่ยวชาญ",
+    caseStudiesTitle: "ผลงานที่คัดเลือก",
+    caseStudiesSubtitle: "สร้างคุณค่าให้ Operations แบบวัดผลได้",
+    caseStudiesScope: "อ่านรายละเอียดงาน",
+    careerTitle: "ไทม์ไลน์อาชีพ",
+    educationTitle: "การศึกษา",
+    educationDegree: "ปริญญาตรี สาขาการจัดการโลจิสติกส์และโซ่อุปทาน",
+    educationHonours: "เกียรตินิยมอันดับ 1",
+    labsTitle: "Public Experiments & Labs",
+    contactBannerTitle: "พร้อมสำหรับงานถัดไปหรือยัง?",
+    contactBannerSubtitle: "ผมกำลังมองหาบทบาทที่ Operations, Data และ Planning มาบรรจบกัน มาสร้างระบบที่มีประสิทธิภาพด้วยกันครับ",
+    footerText: "© 2026 Theerapong Thanarodpaibun",
+    backToTop: "กลับขึ้นบนสุด",
+    // Deep data
+    projects: [
+      {
+        title: "Refreshable Reporting Pipeline",
+        category: "Automation / Planning Analytics",
+        description: "สร้าง workflow ด้วย Power Query และ SQL เพื่อเตรียมรายงานแบบอัตโนมัติ ลดรอบเวลาทำงานจาก 2 วันเหลือเพียง 1 ชั่วโมง ลดความเสี่ยงจากการทำงาน manual และเพิ่ม visibility ด้วย dashboard ที่ใช้ซ้ำได้",
+        tags: ["Power Query", "SQL", "Excel VBA"]
+      },
+      {
+        title: "Spare Parts Location Planning",
+        category: "Warehouse Optimization",
+        description: "วิเคราะห์ความถี่การเคลื่อนไหวของ part เพื่อแยก fast/slow/dead stock แล้วจัด location ใหม่ในคลังสินค้า ช่วยให้หยิบจ่ายได้เร็วขึ้นและควบคุมง่ายขึ้น",
+        tags: ["Inventory Optimization", "Logistics", "Process Design"]
+      },
+      {
+        title: "Budget vs Demand Logic Tool",
+        category: "Demand / Capacity Planning",
+        description: "พัฒนา planning model เพื่อเทียบ capacity ของ resource กับ demand requirement ช่วยลดการใช้ดุลยพินิจแบบ manual และทำให้การจัดสรรทรัพยากรสอดคล้องกับงบประมาณ",
+        tags: ["Forecasting", "Data Analytics", "Planning"]
+      }
+    ],
+    experience: [
+      {
+        role: "Warehouse Specialist",
+        company: "TITANICOM TECH (THAILAND) CO., LTD.",
+        period: "มี.ค. 2026 - ปัจจุบัน",
+        description: "ดูแล inventory ของ IT server spare parts ตั้งแต่รับเข้า เบิกจ่าย รับคืน ตรวจนับ ควบคุม location และ reconcile ระหว่าง stock จริงกับ record",
+        details: [
+          "จัดการงานรับเข้า เบิกจ่าย รับคืน ตรวจนับรอบ และ reconcile ข้อมูลสต็อกสำหรับ IT server spare parts",
+          "วิเคราะห์ประวัติการเคลื่อนไหวเพื่อแยกประเภท fast/slow/dead stock เพื่อการจัดเก็บและเติมสินค้าที่ชัดเจน",
+          "จัด location ใหม่ตามความถี่การหยิบ เพื่อลดระยะเดินและเพิ่มความรวดเร็วในการเข้าถึงสินค้า",
+          "จัดทำรายงาน inventory และ operations ครอบคลุม stock movement, usage และ performance indicators",
+          "วางมาตรฐานการจัดเก็บและการจัดการ spare parts เพื่อให้ process การทำงานสม่ำเสมอ"
+        ]
+      },
+      {
+        role: "Capacity Planner",
+        company: "HANESBRANDS ROH ASIA LTD.",
+        period: "ก.พ. 2025 - ก.พ. 2026",
+        description: "สร้าง automated reporting และ planning tools ด้วย Power Query, SQL และ Excel เพื่อเพิ่ม visibility ด้าน budget, demand และ resource",
+        details: [
+          "สร้าง automated reporting pipeline ด้วย Power Query และ SQL สำหรับจัดการข้อมูลวางแผน",
+          "แทนที่การเตรียมรายงานแบบ manual ด้วย dashboard ที่ใช้ซ้ำได้ ลดเวลาทำงานจาก 2 วันเหลือ 1 ชั่วโมง",
+          "สร้าง planning tool แบบ logic-based เพื่อเปรียบเทียบ budget, demand และทรัพยากรที่มีอยู่",
+          "เพิ่มความชัดเจนในการวางแผนด้วยการจัดมาตรฐาน source data และขั้นตอนการ transform ข้อมูล"
+        ]
+      },
+      {
+        role: "Demand Planner",
+        company: "HANESBRANDS ROH ASIA LTD.",
+        period: "มิ.ย. 2024 - ธ.ค. 2024",
+        description: "วิเคราะห์ sales trend, ติดตามระดับสต็อก, เปิดใบสั่งผลิต และวิเคราะห์สาเหตุการยกเลิก order ด้วย root cause analysis",
+        details: [
+          "วิเคราะห์แนวโน้มการขายด้วย Pivot Tables เพื่อสนับสนุนการวางแผน demand และจังหวะการผลิต",
+          "ติดตามระดับสต็อกและเปิด production order สำหรับสินค้าที่ต่ำกว่า safety level เพื่อลด stockout risk",
+          "วิเคราะห์สาเหตุการยกเลิก order (Root Cause Analysis) เช่น factory delay หรือ warehouse discrepancy",
+          "สนับสนุนการวางแผนโดยเชื่อมโยง demand signal เข้ากับระดับสต็อกและความต้องการผลิต"
+        ]
+      }
+    ],
+    expertise: [
+      {
+        category: "Data Automation",
+        skills: ["Advanced Power Query", "Excel VBA Automation", "Dashboard Tracking", "Reporting Flows"],
+        icon: <Database className="w-5 h-5" />
+      },
+      {
+        category: "Planning",
+        skills: ["Capacity Planning", "Inventory Optimization", "Sales Trend Analysis", "Root Cause Analysis"],
+        icon: <Award className="w-5 h-5" />
+      },
+      {
+        category: "Warehouse Control",
+        skills: ["Spare Parts Control", "Stock Reconciliation", "FIFO Management", "Inbound/Outbound Flow"],
+        icon: <Briefcase className="w-5 h-5" />
+      },
+      {
+        category: "Process Design",
+        skills: ["Dynamics NAV", "Workflow Standardization", "Documentation", "Operating Routines"],
+        icon: <Settings className="w-5 h-5" />
+      }
+    ]
+  }
+};
+
 export default function Home() {
+  const [lang, setLang] = useState<"en" | "th">("en");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+
+  const t = translations[lang];
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -32,6 +275,9 @@ export default function Home() {
   });
 
   useEffect(() => {
+    const savedLang = localStorage.getItem("portfolio-lang") as "en" | "th";
+    if (savedLang) setLang(savedLang);
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       setShowBackToTop(window.scrollY > 500);
@@ -39,6 +285,12 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleLang = () => {
+    const newLang = lang === "en" ? "th" : "en";
+    setLang(newLang);
+    localStorage.setItem("portfolio-lang", newLang);
+  };
 
   const scrollToTop = () => {
     const duration = 1200;
@@ -61,94 +313,10 @@ export default function Home() {
   };
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Resume", href: "#resume" },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const projects = [
-    {
-      title: "Refreshable Reporting Pipeline",
-      category: "Automation / Planning Analytics",
-      description: "Built a Power Query and basic SQL workflow that replaced manual report preparation, reducing a recurring reporting cycle from 2 days to 1 hour. Standardized source extraction and transformation. Reduced manual copy-paste risk and rework. Improved management visibility through reusable dashboards.",
-      tags: ["Power Query", "SQL", "Excel VBA"]
-    },
-    {
-      title: "Spare Parts Location Planning",
-      category: "Warehouse Optimization",
-      description: "Analyzed part movement frequency to classify fast-moving, slow-moving, and dead stock, then reorganized locations to support faster issuing and clearer control.",
-      tags: ["Inventory Optimization", "Logistics", "Process Design"]
-    },
-    {
-      title: "Budget vs Demand Logic Tool",
-      category: "Demand / Capacity Planning",
-      description: "Developed a planning model to compare resource capacity with demand requirements, helping planners reduce manual judgment and align allocation decisions.",
-      tags: ["Forecasting", "Data Analytics", "Planning"]
-    }
-  ];
-
-  const experience = [
-    {
-      role: "Warehouse Specialist",
-      company: "TITANICOM TECH (THAILAND) CO., LTD.",
-      period: "Mar 2026 - Present",
-      description: "Manages IT server spare parts inventory from receiving to issuance, returns, stock counting, location control, and reconciliation between physical stock and records.",
-      details: [
-        "Managed inbound receiving, outbound issuance, returns, cycle counts, and inventory record reconciliation for IT server spare parts.",
-        "Analyzed movement history to classify fast-moving, slow-moving, and dead stock items for clearer storage and replenishment decisions.",
-        "Reorganized warehouse locations around picking frequency to reduce walking distance and improve spare parts accessibility.",
-        "Prepared recurring inventory and operations reports covering stock movement, usage, outstanding items, and warehouse performance indicators.",
-        "Standardized storage arrangement, spare parts handling, and inventory update routines to improve process consistency."
-      ]
-    },
-    {
-      role: "Capacity Planner",
-      company: "HANESBRANDS ROH ASIA LTD.",
-      period: "Feb 2025 - Feb 2026",
-      description: "Built automated reporting and planning tools using Power Query, basic SQL, and Excel logic to improve budget, demand, and resource visibility.",
-      details: [
-        "Built an automated reporting pipeline using Power Query and basic SQL to extract, transform, and refresh planning data.",
-        "Replaced manual report preparation with reusable dashboard logic, reducing report cycle time from 2 days to 1 hour.",
-        "Created a logic-based planning tool to compare budget, demand, and available resources for more consistent allocation decisions.",
-        "Improved planning visibility by standardizing source data, transformation rules, and refresh routines."
-      ]
-    },
-    {
-      role: "Demand Planner",
-      company: "HANESBRANDS ROH ASIA LTD.",
-      period: "Jun 2024 - Dec 2024",
-      description: "Analyzed sales trends, monitored inventory thresholds, initiated production orders, and investigated order cancellations through root cause analysis.",
-      details: [
-        "Analyzed sales trends with Excel Pivot Tables to support demand planning decisions and production order timing.",
-        "Monitored inventory thresholds and initiated production orders for styles below safety levels to reduce stockout risk.",
-        "Investigated order cancellations through root cause analysis, including factory delay and warehouse discrepancy factors.",
-        "Supported planning reviews by connecting demand signals with inventory status and production needs."
-      ]
-    }
-  ];
-
-  const expertise = [
-    {
-      category: "Data Automation",
-      skills: ["Advanced Power Query", "Excel VBA Automation", "Dashboard Tracking", "Reporting Flows"],
-      icon: <Database className="w-5 h-5" />
-    },
-    {
-      category: "Planning",
-      skills: ["Capacity Planning", "Inventory Optimization", "Sales Trend Analysis", "Root Cause Analysis"],
-      icon: <Award className="w-5 h-5" />
-    },
-    {
-      category: "Warehouse Control",
-      skills: ["Spare Parts Control", "Stock Reconciliation", "FIFO Management", "Inbound/Outbound Flow"],
-      icon: <Briefcase className="w-5 h-5" />
-    },
-    {
-      category: "Process Design",
-      skills: ["Dynamics NAV", "Workflow Standardization", "Documentation", "Operating Routines"],
-      icon: <Settings className="w-5 h-5" />
-    }
+    { name: t.navAbout, href: "#about" },
+    { name: t.navProjects, href: "#projects" },
+    { name: t.navResume, href: "#resume" },
+    { name: t.navContact, href: "#contact" },
   ];
 
   const containerVariants = {
@@ -190,31 +358,42 @@ export default function Home() {
             onClick={scrollToTop}
             className="text-xl font-bold tracking-tighter uppercase group flex items-center"
           >
-            <span className="group-hover:text-muted transition-colors duration-500">Peach</span>
+            <span className="group-hover:text-muted transition-colors duration-500">{t.brand}</span>
             <span className="text-muted group-hover:scale-150 transition-transform duration-500 ml-0.5">.</span>
           </button>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold text-muted">
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                className="hover:text-primary transition-colors duration-500 relative group"
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-muted transition-all duration-500 group-hover:w-full" />
-              </a>
-            ))}
-          </div>
+          <div className="flex items-center space-x-10">
+            {/* Desktop Nav */}
+            <div className="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold text-muted">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  className="hover:text-primary transition-colors duration-500 relative group"
+                >
+                  {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-muted transition-all duration-500 group-hover:w-full" />
+                </a>
+              ))}
+            </div>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden p-2 text-primary hover:text-muted transition-colors duration-500"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Language Switch */}
+            <button 
+              onClick={toggleLang}
+              className="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-muted hover:text-primary transition-colors"
+            >
+              <Globe size={14} />
+              <span>{lang === "en" ? "TH" : "EN"}</span>
+            </button>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="md:hidden p-2 text-primary hover:text-muted transition-colors duration-500"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -266,7 +445,7 @@ export default function Home() {
               transition={{ duration: 1.5, delay: 0.3 }}
               className="text-muted font-bold uppercase text-[10px] mb-8"
             >
-              Operations Data & Automation Specialist
+              {t.heroEyebrow}
             </motion.h2>
             <h1 className="text-6xl md:text-9xl font-bold tracking-tighter mb-10 leading-[0.85]">
               <motion.span
@@ -275,7 +454,7 @@ export default function Home() {
                 transition={{ duration: 1, delay: 0.5 }}
                 className="inline-block"
               >
-                Theerapong
+                {t.heroTitleFirst}
               </motion.span> <br /> 
               <motion.span
                 initial={{ opacity: 0, x: 30 }}
@@ -283,7 +462,7 @@ export default function Home() {
                 transition={{ duration: 1, delay: 0.7 }}
                 className="text-accent italic inline-block"
               >
-                Thanarodpaibun
+                {t.heroTitleLast}
               </motion.span>
             </h1>
             <motion.p 
@@ -292,7 +471,7 @@ export default function Home() {
               transition={{ duration: 1.2, delay: 1 }}
               className="max-w-2xl text-xl text-muted leading-relaxed mb-12 font-medium"
             >
-              I turn warehouse movement, inventory records, and planning inputs into practical operating systems: cleaner dashboards, faster reports, and sharper decisions.
+              {t.heroDescription}
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -301,10 +480,10 @@ export default function Home() {
               className="flex flex-wrap gap-6"
             >
               <a href="#contact" className="group bg-primary text-background px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-muted transition-colors duration-500 flex items-center shadow-lg">
-                Contact <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
+                {t.heroContact} <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
               </a>
               <a href="#projects" className="border border-primary/20 px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:border-primary transition-colors duration-500">
-                View Projects
+                {t.heroViewProjects}
               </a>
             </motion.div>
           </motion.div>
@@ -315,9 +494,9 @@ export default function Home() {
       <section className="py-24 border-y border-accent-light">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16">
           {[
-            { label: "Reporting Cycle Reduced", value: "2d → 1h" },
-            { label: "Inventory Accuracy", value: "100%" },
-            { label: "Based in", value: "Bangkok" },
+            { label: t.statOneDesc, value: t.statOne },
+            { label: t.statTwoDesc, value: t.statTwo },
+            { label: t.statThreeDesc, value: t.statThree },
           ].map((stat, i) => (
             <motion.div 
               key={i} 
@@ -344,9 +523,9 @@ export default function Home() {
               viewport={viewportConfig}
               transition={{ duration: 1 }}
             >
-              <h3 className="text-4xl font-bold mb-10 tracking-tight leading-tight text-primary">Bridging the gap between physical operations and data logic.</h3>
+              <h3 className="text-4xl font-bold mb-10 tracking-tight leading-tight text-primary">{t.aboutTitle}</h3>
               <p className="text-lg text-muted leading-relaxed mb-8">
-                Peach combines hands-on warehouse discipline with planning analytics. The profile is strongest where a team needs someone who understands physical stock movement, can diagnose data gaps, and can build simple tools that make daily decisions faster.
+                {t.aboutP1}
               </p>
               <motion.div 
                 whileHover={{ scale: 1.02 }}
@@ -355,9 +534,9 @@ export default function Home() {
               >
                 <h4 className="font-bold text-xs uppercase tracking-widest mb-4 flex items-center text-muted">
                   <span className="w-2 h-2 rounded-full bg-primary mr-3 animate-pulse" />
-                  Current Focus
+                  {t.aboutFocus}
                 </h4>
-                <p className="text-primary font-bold">Inventory visibility, stock accuracy, and automated reporting flows.</p>
+                <p className="text-primary font-bold">{t.aboutFocusText}</p>
               </motion.div>
             </motion.div>
             
@@ -368,7 +547,7 @@ export default function Home() {
               viewport={viewportConfig}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              {expertise.map((item, i) => (
+              {t.expertise.map((item, i) => (
                 <motion.div 
                   key={i}
                   variants={itemVariants}
@@ -403,12 +582,12 @@ export default function Home() {
             className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6"
           >
             <div>
-              <h2 className="text-5xl font-bold tracking-tighter mb-4 text-primary">Case Studies</h2>
-              <p className="text-muted uppercase tracking-widest text-[10px] font-bold">Measurable Operational Value</p>
+              <h2 className="text-5xl font-bold tracking-tighter mb-4 text-primary">{t.caseStudiesTitle}</h2>
+              <p className="text-muted uppercase tracking-widest text-[10px] font-bold">{t.caseStudiesSubtitle}</p>
             </div>
           </motion.div>
           <div className="grid grid-cols-1 gap-8">
-            {projects.map((project, i) => (
+            {t.projects.map((project, i) => (
               <motion.div 
                 key={i} 
                 whileInView={{ opacity: 1, y: 0 }}
@@ -446,12 +625,12 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="text-5xl font-bold tracking-tighter mb-20 text-primary"
           >
-            Career Timeline
+            {t.careerTitle}
           </motion.h2>
           <div className="space-y-20 relative">
             <div className="absolute left-0 top-0 bottom-0 w-px bg-accent-light md:left-[2.5rem]" />
 
-            {experience.map((exp, i) => (
+            {t.experience.map((exp, i) => (
               <motion.div 
                 key={i} 
                 whileInView={{ opacity: 1, y: 0 }}
@@ -505,16 +684,16 @@ export default function Home() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-3xl rounded-full" />
             <div className="flex items-center mb-8 text-primary">
               <GraduationCap className="w-8 h-8 mr-4" />
-              <h3 className="text-3xl font-bold tracking-tight">Education</h3>
+              <h3 className="text-3xl font-bold tracking-tight">{t.educationTitle}</h3>
             </div>
-            <h4 className="text-xl font-bold mb-2 text-primary">Bachelor of Logistics and Supply Chain Management</h4>
+            <h4 className="text-xl font-bold mb-2 text-primary">{t.educationDegree}</h4>
             <p className="text-muted font-medium mb-6">Dhurakij Pundit University, CIBA</p>
             <div className="flex flex-wrap gap-4 items-center">
               <motion.span 
                 whileHover={{ scale: 1.05 }}
                 className="px-6 py-2.5 bg-primary text-background rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md transition-transform"
               >
-                First Class Honours
+                {t.educationHonours}
               </motion.span>
               <span className="text-xs font-bold text-muted px-4 py-2 bg-background rounded-full border border-accent-light">GPA 3.51</span>
               <span className="text-xs font-bold text-muted px-4 py-2 bg-background rounded-full border border-accent-light">2020 - 2024</span>
@@ -533,7 +712,7 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="text-[10px] uppercase tracking-[0.3em] font-bold text-muted mb-12"
           >
-            Public Experiments & Labs
+            {t.labsTitle}
           </motion.h3>
           <div className="grid md:grid-cols-2 gap-8">
             <motion.a 
@@ -590,7 +769,7 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="text-5xl md:text-8xl font-bold text-background mb-10 tracking-tighter leading-none"
             >
-              Ready for the <br /> <span className="text-accent italic">next operation?</span>
+              {t.contactBannerTitle.split("?")[0]} <br /> <span className="text-accent italic">{t.contactBannerTitle.split("?")[1] || "?"}</span>
             </motion.h2>
             <motion.p 
               whileInView={{ opacity: 1 }}
@@ -599,7 +778,7 @@ export default function Home() {
               transition={{ duration: 1.2, delay: 0.3 }}
               className="text-background/60 text-lg mb-16 max-w-xl mx-auto font-medium"
             >
-              I'm looking for roles where operations, data, and planning meet. Let's connect and build something efficient.
+              {t.contactBannerSubtitle}
             </motion.p>
             <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
               <motion.a 
@@ -629,7 +808,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-16 px-6 border-t border-accent-light bg-white/5">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] text-muted uppercase tracking-[0.2em] font-bold">
-          <p>© 2026 Theerapong Thanarodpaibun</p>
+          <p>{t.footerText}</p>
           <div className="flex space-x-10 mt-8 md:mt-0">
             <a href="https://github.com/peichh" className="hover:text-primary transition-colors duration-500">Github</a>
             <a href="#" className="hover:text-primary transition-colors duration-500">LinkedIn</a>
