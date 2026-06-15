@@ -41,7 +41,6 @@ export default function Home() {
   }, []);
 
   const scrollToTop = () => {
-    // Slower, more distinct custom smooth scroll
     const duration = 1200;
     const start = window.pageYOffset;
     const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
@@ -82,7 +81,7 @@ export default function Home() {
       tags: ["Inventory Optimization", "Logistics", "Process Design"]
     },
     {
-      title: "Budget vs Demand Logic Tool",
+      title: "Budget vs Demand Tool",
       category: "Demand / Capacity Planning",
       description: "Developed a planning model to compare resource capacity with demand requirements, helping planners reduce manual judgment and align allocation decisions.",
       tags: ["Forecasting", "Data Analytics", "Planning"]
@@ -157,7 +156,7 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15 // Slower stagger
+        staggerChildren: 0.15
       }
     }
   };
@@ -168,8 +167,8 @@ export default function Home() {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.8, // Slower duration
-        ease: [0.22, 1, 0.36, 1] // Custom cubic-bezier for high-end feel
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1]
       }
     }
   };
@@ -322,7 +321,7 @@ export default function Home() {
               key={i} 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
-              viewport={{ once: false, amount: 0.3 }} // Triggers on scroll up/down
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: i * 0.15 }}
               className="flex flex-col"
             >
@@ -340,7 +339,7 @@ export default function Home() {
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -40 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1 }}
             >
               <h3 className="text-4xl font-bold mb-10 tracking-tight leading-tight">Bridging the gap between physical operations and data logic.</h3>
@@ -364,7 +363,7 @@ export default function Home() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
               {expertise.map((item, i) => (
@@ -397,7 +396,7 @@ export default function Home() {
           <motion.div 
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 30 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1 }}
             className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6"
           >
@@ -412,7 +411,7 @@ export default function Home() {
                 key={i} 
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 50 }}
-                viewport={{ once: false, amount: 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 1, delay: i * 0.15 }}
                 whileHover={{ x: 15 }}
                 className="group p-10 bg-white/40 border border-muted/10 rounded-[2.5rem] hover:bg-white/60 transition-all duration-1000 flex flex-col md:flex-row gap-12 shadow-sm hover:shadow-2xl"
@@ -444,14 +443,13 @@ export default function Home() {
           <motion.h2 
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -40 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1 }}
             className="text-5xl font-bold tracking-tighter mb-20"
           >
             Career Timeline
           </motion.h2>
           <div className="space-y-20 relative">
-            {/* Timeline vertical line */}
             <div className="absolute left-0 top-0 bottom-0 w-px bg-muted/10 md:left-[2.5rem]" />
 
             {experience.map((exp, i) => (
@@ -459,11 +457,10 @@ export default function Home() {
                 key={i} 
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 40 }}
-                viewport={{ once: false, amount: 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.8 }}
                 className="group relative pl-8 md:pl-20"
               >
-                {/* Timeline dot */}
                 <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-accent-dark md:left-[2.35rem] group-hover:scale-150 transition-transform duration-500 shadow-[0_0_12px_rgba(123,159,153,0.6)]" />
                 
                 <div className="flex flex-col md:flex-row md:justify-between items-start mb-8 gap-4">
@@ -486,7 +483,7 @@ export default function Home() {
                       key={j} 
                       whileInView={{ opacity: 1, x: 0 }}
                       initial={{ opacity: 0, x: 15 }}
-                      viewport={{ once: false, amount: 0.1 }}
+                      viewport={{ once: true, amount: 0.1 }}
                       transition={{ duration: 0.6, delay: j * 0.08 }}
                       className="flex items-start text-sm text-primary/80 leading-relaxed"
                     >
@@ -499,11 +496,10 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Education */}
           <motion.div 
             whileInView={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.96 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1 }}
             className="mt-32 p-12 bg-white/40 border border-muted/10 rounded-[3rem] shadow-sm relative overflow-hidden"
           >
@@ -534,7 +530,7 @@ export default function Home() {
           <motion.h3 
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="text-[10px] uppercase tracking-[0.3em] font-bold text-muted mb-12"
           >
@@ -545,7 +541,7 @@ export default function Home() {
               href="#" 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               whileHover={{ y: -8, backgroundColor: "rgba(176, 214, 208, 0.2)" }}
               transition={{ duration: 0.6 }}
               className="p-10 bg-white/20 border border-muted/10 rounded-[2rem] transition-all duration-700 group shadow-sm flex flex-col justify-between"
@@ -560,7 +556,7 @@ export default function Home() {
               href="#" 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               whileHover={{ y: -8, backgroundColor: "rgba(176, 214, 208, 0.2)" }}
               transition={{ duration: 0.6, delay: 0.15 }}
               className="p-10 bg-white/20 border border-muted/10 rounded-[2rem] transition-all duration-700 group shadow-sm flex flex-col justify-between"
@@ -581,7 +577,7 @@ export default function Home() {
           <motion.div 
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 60 }}
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 1.2 }}
             className="bg-primary rounded-[4rem] p-16 md:p-32 text-center relative overflow-hidden shadow-2xl"
           >
@@ -591,7 +587,7 @@ export default function Home() {
             <motion.h2 
               whileInView={{ y: 0, opacity: 1 }}
               initial={{ y: 30, opacity: 0 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1 }}
               className="text-5xl md:text-8xl font-bold text-background mb-10 tracking-tighter leading-none"
             >
@@ -600,7 +596,7 @@ export default function Home() {
             <motion.p 
               whileInView={{ opacity: 1 }}
               initial={{ opacity: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 1.2, delay: 0.3 }}
               className="text-background/60 text-lg mb-16 max-w-xl mx-auto font-medium"
             >
