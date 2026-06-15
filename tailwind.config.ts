@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#050505",
-        navy: {
-          900: "#0A0F1D",
-          800: "#12192B",
-        },
+        background: "#f3ead0", // Cream/sand
+        primary: "#4b4737",    // Rich dark brown
+        muted: "#b1ab99",      // Warm muted gray
+        accent: "#b0d6d0",     // Soft sage
+        "accent-dark": "#7b9f99" // Pastel teal
       },
     },
   },
