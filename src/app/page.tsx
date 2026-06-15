@@ -429,9 +429,6 @@ export default function Home() {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-muted leading-relaxed text-lg mb-8">{project.description}</p>
-                  <button className="flex items-center text-xs font-bold uppercase tracking-widest text-primary group-hover:text-muted transition-colors duration-500">
-                    Read detailed scope <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-500" />
-                  </button>
                 </div>
               </motion.div>
             ))}
