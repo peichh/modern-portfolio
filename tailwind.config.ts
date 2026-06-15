@@ -9,11 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#e8f3d0", // Light greenish-cream
-        primary: "#007699",    // Deep teal/blue
-        muted: "#5f9aa2",      // Muted slate blue/teal
-        accent: "#befbff",     // Light icy blue/cyan
-        "accent-dark": "#007699" // Reusing deep teal for consistency
+        background: "#f9f2e2", // Light cream
+        primary: "#27695e",    // Deep forest/teal
+        muted: "#57836f",      // Muted forest
+        "muted-light": "#839d84",
+        accent: "#acb89f",
+        "accent-light": "#d4d4be"
       },
     },
   },

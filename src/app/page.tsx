@@ -176,22 +176,22 @@ export default function Home() {
   const viewportConfig = { once: true, amount: 0.1, margin: "0px 0px -100px 0px" };
 
   return (
-    <main className="min-h-screen bg-background text-primary selection:bg-accent/30 overflow-x-hidden">
+    <main className="min-h-screen bg-background text-primary selection:bg-muted/30 overflow-x-hidden">
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-accent-dark z-[100] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] origin-left"
         style={{ scaleX }}
       />
 
       {/* Nav */}
-      <nav className={`fixed top-0 w-full z-50 transition-colors duration-700 ${isScrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-muted/20 shadow-sm" : "bg-transparent py-6"}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-colors duration-700 ${isScrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-accent-light shadow-sm" : "bg-transparent py-6"}`}>
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
           <button 
             onClick={scrollToTop}
             className="text-xl font-bold tracking-tighter uppercase group flex items-center"
           >
-            <span className="group-hover:text-accent-dark transition-colors duration-500">Peach</span>
-            <span className="text-accent-dark group-hover:scale-150 transition-transform duration-500 ml-0.5">.</span>
+            <span className="group-hover:text-muted transition-colors duration-500">Peach</span>
+            <span className="text-muted group-hover:scale-150 transition-transform duration-500 ml-0.5">.</span>
           </button>
 
           {/* Desktop Nav */}
@@ -203,14 +203,14 @@ export default function Home() {
                 className="hover:text-primary transition-colors duration-500 relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-dark transition-all duration-500 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-muted transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
           </div>
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 text-primary hover:text-accent-dark transition-colors duration-500"
+            className="md:hidden p-2 text-primary hover:text-muted transition-colors duration-500"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -238,7 +238,7 @@ export default function Home() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-4xl font-bold tracking-tighter uppercase hover:text-accent-dark transition-colors duration-500"
+                className="text-4xl font-bold tracking-tighter uppercase hover:text-muted transition-colors duration-500"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -264,7 +264,7 @@ export default function Home() {
               initial={{ opacity: 0, letterSpacing: "0.6em" }}
               animate={{ opacity: 1, letterSpacing: "0.3em" }}
               transition={{ duration: 1.5, delay: 0.3 }}
-              className="text-accent-dark font-bold uppercase text-[10px] mb-8"
+              className="text-muted font-bold uppercase text-[10px] mb-8"
             >
               Operations Data & Automation Specialist
             </motion.h2>
@@ -281,7 +281,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.7 }}
-                className="text-muted/40 italic inline-block"
+                className="text-accent italic inline-block"
               >
                 Thanarodpaibun
               </motion.span>
@@ -290,7 +290,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2, delay: 1 }}
-              className="max-w-2xl text-xl text-primary/80 leading-relaxed mb-12 font-medium"
+              className="max-w-2xl text-xl text-muted leading-relaxed mb-12 font-medium"
             >
               I turn warehouse movement, inventory records, and planning inputs into practical operating systems: cleaner dashboards, faster reports, and sharper decisions.
             </motion.p>
@@ -300,10 +300,10 @@ export default function Home() {
               transition={{ duration: 1, delay: 1.2 }}
               className="flex flex-wrap gap-6"
             >
-              <a href="#contact" className="group bg-primary text-background px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-accent-dark transition-colors duration-500 flex items-center shadow-lg">
+              <a href="#contact" className="group bg-primary text-background px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-muted transition-colors duration-500 flex items-center shadow-lg">
                 Contact <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
               </a>
-              <a href="#projects" className="border border-primary/10 px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:border-primary transition-colors duration-500">
+              <a href="#projects" className="border border-primary/20 px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:border-primary transition-colors duration-500">
                 View Projects
               </a>
             </motion.div>
@@ -312,7 +312,7 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="py-24 border-y border-muted/20">
+      <section className="py-24 border-y border-accent-light">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16">
           {[
             { label: "Reporting Cycle Reduced", value: "2d → 1h" },
@@ -327,7 +327,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: i * 0.15 }}
               className="flex flex-col"
             >
-              <span className="text-5xl font-bold mb-3 tracking-tighter">{stat.value}</span>
+              <span className="text-5xl font-bold mb-3 tracking-tighter text-primary">{stat.value}</span>
               <span className="text-muted text-[10px] uppercase tracking-[0.2em] font-bold">{stat.label}</span>
             </motion.div>
           ))}
@@ -344,17 +344,17 @@ export default function Home() {
               viewport={viewportConfig}
               transition={{ duration: 1 }}
             >
-              <h3 className="text-4xl font-bold mb-10 tracking-tight leading-tight">Bridging the gap between physical operations and data logic.</h3>
-              <p className="text-lg text-primary/70 leading-relaxed mb-8">
+              <h3 className="text-4xl font-bold mb-10 tracking-tight leading-tight text-primary">Bridging the gap between physical operations and data logic.</h3>
+              <p className="text-lg text-muted leading-relaxed mb-8">
                 Peach combines hands-on warehouse discipline with planning analytics. The profile is strongest where a team needs someone who understands physical stock movement, can diagnose data gaps, and can build simple tools that make daily decisions faster.
               </p>
               <motion.div 
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.5 }}
-                className="p-8 bg-accent/20 rounded-[2rem] border border-accent/30 shadow-inner"
+                className="p-8 bg-accent-light/30 rounded-[2rem] border border-accent-light shadow-sm"
               >
-                <h4 className="font-bold text-xs uppercase tracking-widest mb-4 flex items-center">
-                  <span className="w-2 h-2 rounded-full bg-accent-dark mr-3 animate-pulse" />
+                <h4 className="font-bold text-xs uppercase tracking-widest mb-4 flex items-center text-muted">
+                  <span className="w-2 h-2 rounded-full bg-primary mr-3 animate-pulse" />
                   Current Focus
                 </h4>
                 <p className="text-primary font-bold">Inventory visibility, stock accuracy, and automated reporting flows.</p>
@@ -372,15 +372,15 @@ export default function Home() {
                 <motion.div 
                   key={i}
                   variants={itemVariants}
-                  whileHover={{ y: -12, borderColor: "rgba(123, 159, 153, 0.6)" }}
-                  className="p-8 bg-white/30 border border-muted/10 rounded-3xl group shadow-sm hover:shadow-xl transition-shadow duration-500"
+                  whileHover={{ y: -12, borderColor: "#27695e" }}
+                  className="p-8 bg-white/20 border border-accent-light rounded-3xl group shadow-sm hover:shadow-xl transition-shadow duration-500"
                 >
-                  <div className="text-accent-dark mb-6 group-hover:scale-110 transition-transform duration-500">{item.icon}</div>
-                  <h4 className="font-bold text-sm uppercase tracking-tight mb-4">{item.category}</h4>
+                  <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-500">{item.icon}</div>
+                  <h4 className="font-bold text-sm uppercase tracking-tight mb-4 text-primary">{item.category}</h4>
                   <ul className="space-y-2">
                     {item.skills.map((s, j) => (
                       <li key={j} className="text-xs text-muted font-medium flex items-center">
-                        <ChevronRight className="w-3 h-3 mr-1 text-accent-dark" />
+                        <ChevronRight className="w-3 h-3 mr-1 text-primary" />
                         {s}
                       </li>
                     ))}
@@ -393,7 +393,7 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="py-32 px-6 bg-accent/5">
+      <section id="projects" className="py-32 px-6 bg-accent-light/10">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             whileInView={{ opacity: 1, y: 0 }}
@@ -403,7 +403,7 @@ export default function Home() {
             className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6"
           >
             <div>
-              <h2 className="text-5xl font-bold tracking-tighter mb-4">Case Studies</h2>
+              <h2 className="text-5xl font-bold tracking-tighter mb-4 text-primary">Case Studies</h2>
               <p className="text-muted uppercase tracking-widest text-[10px] font-bold">Measurable Operational Value</p>
             </div>
           </motion.div>
@@ -416,20 +416,20 @@ export default function Home() {
                 viewport={viewportConfig}
                 transition={{ duration: 1, delay: i * 0.15 }}
                 whileHover={{ x: 15 }}
-                className="group p-10 bg-white/40 border border-muted/10 rounded-[2.5rem] flex flex-col md:flex-row gap-12 shadow-sm hover:shadow-2xl transition-shadow duration-1000"
+                className="group p-10 bg-white/30 border border-accent-light rounded-[2.5rem] flex flex-col md:flex-row gap-12 shadow-sm hover:shadow-2xl transition-shadow duration-1000"
               >
                 <div className="md:w-1/3">
-                  <div className="text-accent-dark text-[10px] font-bold uppercase tracking-widest mb-4">{project.category}</div>
-                  <h4 className="text-3xl font-bold mb-6 tracking-tight leading-tight">{project.title}</h4>
+                  <div className="text-muted text-[10px] font-bold uppercase tracking-widest mb-4">{project.category}</div>
+                  <h4 className="text-3xl font-bold mb-6 tracking-tight leading-tight text-primary">{project.title}</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, j) => (
-                      <span key={j} className="text-[9px] uppercase tracking-widest font-bold px-4 py-2 bg-background rounded-full border border-muted/10 group-hover:border-accent-dark/40 transition-colors duration-700">{tag}</span>
+                      <span key={j} className="text-[9px] uppercase tracking-widest font-bold px-4 py-2 bg-background rounded-full border border-accent-light group-hover:border-primary/40 transition-colors duration-700">{tag}</span>
                     ))}
                   </div>
                 </div>
                 <div className="md:w-2/3">
-                  <p className="text-primary/70 leading-relaxed text-lg mb-8">{project.description}</p>
-                  <button className="flex items-center text-xs font-bold uppercase tracking-widest group-hover:text-accent-dark transition-colors duration-500">
+                  <p className="text-muted leading-relaxed text-lg mb-8">{project.description}</p>
+                  <button className="flex items-center text-xs font-bold uppercase tracking-widest text-primary group-hover:text-muted transition-colors duration-500">
                     Read detailed scope <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-500" />
                   </button>
                 </div>
@@ -447,12 +447,12 @@ export default function Home() {
             initial={{ opacity: 0, x: -40 }}
             viewport={viewportConfig}
             transition={{ duration: 1 }}
-            className="text-5xl font-bold tracking-tighter mb-20"
+            className="text-5xl font-bold tracking-tighter mb-20 text-primary"
           >
             Career Timeline
           </motion.h2>
           <div className="space-y-20 relative">
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-muted/10 md:left-[2.5rem]" />
+            <div className="absolute left-0 top-0 bottom-0 w-px bg-accent-light md:left-[2.5rem]" />
 
             {experience.map((exp, i) => (
               <motion.div 
@@ -463,12 +463,12 @@ export default function Home() {
                 transition={{ duration: 0.8 }}
                 className="group relative pl-8 md:pl-20"
               >
-                <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-accent-dark md:left-[2.35rem] group-hover:scale-150 transition-transform duration-500 shadow-[0_0_12px_rgba(123,159,153,0.6)]" />
+                <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary md:left-[2.35rem] group-hover:scale-150 transition-transform duration-500 shadow-[0_0_12px_rgba(39,105,94,0.4)]" />
                 
                 <div className="flex flex-col md:flex-row md:justify-between items-start mb-8 gap-4">
                   <div>
                     <motion.h4 
-                      whileHover={{ color: "#7b9f99" }}
+                      whileHover={{ color: "#57836f" }}
                       transition={{ duration: 0.4 }}
                       className="text-2xl font-bold text-primary cursor-default"
                     >
@@ -476,9 +476,9 @@ export default function Home() {
                     </motion.h4>
                     <p className="text-muted font-bold text-xs uppercase tracking-widest mt-1">{exp.company}</p>
                   </div>
-                  <span className="text-[10px] font-black bg-primary/5 px-4 py-2 rounded-full uppercase tracking-widest whitespace-nowrap shadow-sm">{exp.period}</span>
+                  <span className="text-[10px] font-black bg-primary/5 px-4 py-2 rounded-full uppercase tracking-widest whitespace-nowrap shadow-sm text-primary">{exp.period}</span>
                 </div>
-                <p className="text-primary/70 font-medium mb-8 leading-relaxed italic border-l-2 border-accent/20 pl-4">{exp.description}</p>
+                <p className="text-muted font-medium mb-8 leading-relaxed italic border-l-2 border-accent-light pl-4">{exp.description}</p>
                 <ul className="space-y-4">
                   {exp.details.map((detail, j) => (
                     <motion.li 
@@ -487,9 +487,9 @@ export default function Home() {
                       initial={{ opacity: 0, x: 15 }}
                       viewport={viewportConfig}
                       transition={{ duration: 0.6, delay: j * 0.08 }}
-                      className="flex items-start text-sm text-primary/80 leading-relaxed"
+                      className="flex items-start text-sm text-muted leading-relaxed"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent-dark mt-2 mr-4 shrink-0 opacity-60" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-4 shrink-0 opacity-60" />
                       {detail}
                     </motion.li>
                   ))}
@@ -503,31 +503,31 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.96 }}
             viewport={viewportConfig}
             transition={{ duration: 1 }}
-            className="mt-32 p-12 bg-white/40 border border-muted/10 rounded-[3rem] shadow-sm relative overflow-hidden"
+            className="mt-32 p-12 bg-white/20 border border-accent-light rounded-[3rem] shadow-sm relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-3xl rounded-full" />
-            <div className="flex items-center mb-8 text-accent-dark">
+            <div className="flex items-center mb-8 text-primary">
               <GraduationCap className="w-8 h-8 mr-4" />
               <h3 className="text-3xl font-bold tracking-tight">Education</h3>
             </div>
-            <h4 className="text-xl font-bold mb-2">Bachelor of Logistics and Supply Chain Management</h4>
-            <p className="text-primary/70 font-medium mb-6">Dhurakij Pundit University, CIBA</p>
+            <h4 className="text-xl font-bold mb-2 text-primary">Bachelor of Logistics and Supply Chain Management</h4>
+            <p className="text-muted font-medium mb-6">Dhurakij Pundit University, CIBA</p>
             <div className="flex flex-wrap gap-4 items-center">
               <motion.span 
                 whileHover={{ scale: 1.05 }}
-                className="px-6 py-2.5 bg-accent-dark text-background rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md"
+                className="px-6 py-2.5 bg-primary text-background rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md transition-transform"
               >
                 First Class Honours
               </motion.span>
-              <span className="text-xs font-bold text-muted px-4 py-2 bg-background rounded-full border border-muted/10">GPA 3.51</span>
-              <span className="text-xs font-bold text-muted px-4 py-2 bg-background rounded-full border border-muted/10">2020 - 2024</span>
+              <span className="text-xs font-bold text-muted px-4 py-2 bg-background rounded-full border border-accent-light">GPA 3.51</span>
+              <span className="text-xs font-bold text-muted px-4 py-2 bg-background rounded-full border border-accent-light">2020 - 2024</span>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Experiments */}
-      <section className="py-32 px-6 border-t border-muted/10">
+      <section className="py-32 px-6 border-t border-accent-light">
         <div className="max-w-6xl mx-auto">
           <motion.h3 
             whileInView={{ opacity: 1 }}
@@ -544,30 +544,30 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
               viewport={viewportConfig}
-              whileHover={{ y: -8, backgroundColor: "rgba(176, 214, 208, 0.2)" }}
+              whileHover={{ y: -8, backgroundColor: "rgba(172, 184, 159, 0.15)" }}
               transition={{ duration: 0.6 }}
-              className="p-10 bg-white/20 border border-muted/10 rounded-[2rem] group shadow-sm flex flex-col justify-between transition-colors duration-700"
+              className="p-10 bg-white/20 border border-accent-light rounded-[2rem] group shadow-sm flex flex-col justify-between transition-colors duration-700"
             >
               <div>
-                <h4 className="text-2xl font-bold mb-2 group-hover:text-accent-dark transition-colors duration-500">ShopThip</h4>
+                <h4 className="text-2xl font-bold mb-2 text-primary group-hover:text-muted transition-colors duration-500">ShopThip</h4>
                 <p className="text-sm text-muted mb-6 font-medium">Modern shopping interface exercise</p>
               </div>
-              <ExternalLink className="w-5 h-5 text-muted group-hover:text-accent-dark transition-colors duration-500 self-end" />
+              <ExternalLink className="w-5 h-5 text-muted group-hover:text-primary transition-colors duration-500 self-end" />
             </motion.a>
             <motion.a 
               href="#" 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
               viewport={viewportConfig}
-              whileHover={{ y: -8, backgroundColor: "rgba(176, 214, 208, 0.2)" }}
+              whileHover={{ y: -8, backgroundColor: "rgba(172, 184, 159, 0.15)" }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="p-10 bg-white/20 border border-muted/10 rounded-[2rem] group shadow-sm flex flex-col justify-between transition-colors duration-700"
+              className="p-10 bg-white/20 border border-accent-light rounded-[2rem] group shadow-sm flex flex-col justify-between transition-colors duration-700"
             >
               <div>
-                <h4 className="text-2xl font-bold mb-2 group-hover:text-accent-dark transition-colors duration-500">Moo Pak Zap</h4>
+                <h4 className="text-2xl font-bold mb-2 text-primary group-hover:text-muted transition-colors duration-500">Moo Pak Zap</h4>
                 <p className="text-sm text-muted mb-6 font-medium">Daily Thai horoscope automation concept</p>
               </div>
-              <ExternalLink className="w-5 h-5 text-muted group-hover:text-accent-dark transition-colors duration-500 self-end" />
+              <ExternalLink className="w-5 h-5 text-muted group-hover:text-primary transition-colors duration-500 self-end" />
             </motion.a>
           </div>
         </div>
@@ -583,8 +583,8 @@ export default function Home() {
             transition={{ duration: 1.2 }}
             className="bg-primary rounded-[4rem] p-16 md:p-32 text-center relative overflow-hidden shadow-2xl"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-accent-dark/20 blur-[100px] rounded-full" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 blur-[100px] rounded-full" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 blur-[100px] rounded-full" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-muted/20 blur-[100px] rounded-full" />
             
             <motion.h2 
               whileInView={{ y: 0, opacity: 1 }}
@@ -606,7 +606,7 @@ export default function Home() {
             </motion.p>
             <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
               <motion.a 
-                whileHover={{ scale: 1.05, color: "#b0d6d0" }}
+                whileHover={{ scale: 1.05, color: "#f9f2e2" }}
                 transition={{ duration: 0.5 }}
                 href="mailto:theerapong.thana@outlook.com" 
                 className="flex items-center space-x-4 text-xl font-bold text-background transition-colors duration-500"
@@ -616,7 +616,7 @@ export default function Home() {
               </motion.a>
               <div className="hidden lg:block w-px h-10 bg-background/10" />
               <motion.a 
-                whileHover={{ scale: 1.05, color: "#b0d6d0" }}
+                whileHover={{ scale: 1.05, color: "#f9f2e2" }}
                 transition={{ duration: 0.5 }}
                 href="tel:+66808314717" 
                 className="flex items-center space-x-4 text-xl font-bold text-background transition-colors duration-500"
@@ -630,7 +630,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 border-t border-muted/10 bg-white/5">
+      <footer className="py-16 px-6 border-t border-accent-light bg-white/5">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] text-muted uppercase tracking-[0.2em] font-bold">
           <p>© 2026 Theerapong Thanarodpaibun</p>
           <div className="flex space-x-10 mt-8 md:mt-0">
@@ -647,11 +647,11 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0, y: 20 }}
-            whileHover={{ scale: 1.1, backgroundColor: "#7b9f99" }}
+            whileHover={{ scale: 1.1, backgroundColor: "#57836f" }}
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0.5 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full bg-accent-dark text-background flex items-center justify-center shadow-2xl focus:outline-none"
+            className="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full bg-primary text-background flex items-center justify-center shadow-2xl focus:outline-none"
           >
             <ArrowUp size={24} />
           </motion.button>
