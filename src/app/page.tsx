@@ -344,7 +344,7 @@ export default function Home() {
   const viewportConfig = { once: true, amount: 0.1, margin: "0px 0px -100px 0px" };
 
   return (
-    <main className="min-h-screen bg-background text-primary selection:bg-muted/30 overflow-x-hidden">
+    <main className={`min-h-screen bg-background text-primary selection:bg-muted/30 overflow-x-hidden ${lang === "th" ? "font-thai" : "font-sans"}`}>
       {/* Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] origin-left"
@@ -405,7 +405,7 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 150 }}
-            className="fixed inset-0 z-[60] bg-background flex flex-col items-center justify-center space-y-12 p-6"
+            className={`fixed inset-0 z-[60] bg-background flex flex-col items-center justify-center space-y-12 p-6 ${lang === "th" ? "font-thai" : "font-sans"}`}
           >
             <button 
               className="absolute top-6 right-6 p-2 text-primary"
