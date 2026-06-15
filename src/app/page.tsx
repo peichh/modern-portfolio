@@ -81,7 +81,7 @@ export default function Home() {
       tags: ["Inventory Optimization", "Logistics", "Process Design"]
     },
     {
-      title: "Budget vs Demand Tool",
+      title: "Budget vs Demand Logic Tool",
       category: "Demand / Capacity Planning",
       description: "Developed a planning model to compare resource capacity with demand requirements, helping planners reduce manual judgment and align allocation decisions.",
       tags: ["Forecasting", "Data Analytics", "Planning"]
@@ -173,6 +173,8 @@ export default function Home() {
     }
   };
 
+  const viewportConfig = { once: true, amount: 0.1, margin: "0px 0px -100px 0px" };
+
   return (
     <main className="min-h-screen bg-background text-primary selection:bg-accent/30 overflow-x-hidden">
       {/* Progress Bar */}
@@ -182,7 +184,7 @@ export default function Home() {
       />
 
       {/* Nav */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${isScrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-muted/20 shadow-sm" : "bg-transparent py-6"}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-colors duration-700 ${isScrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-muted/20 shadow-sm" : "bg-transparent py-6"}`}>
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
           <button 
             onClick={scrollToTop}
@@ -236,7 +238,7 @@ export default function Home() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-4xl font-bold tracking-tighter uppercase hover:text-accent-dark transition duration-500"
+                className="text-4xl font-bold tracking-tighter uppercase hover:text-accent-dark transition-colors duration-500"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -298,10 +300,10 @@ export default function Home() {
               transition={{ duration: 1, delay: 1.2 }}
               className="flex flex-wrap gap-6"
             >
-              <a href="#contact" className="group bg-primary text-background px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-accent-dark transition-all duration-500 flex items-center shadow-lg">
+              <a href="#contact" className="group bg-primary text-background px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-accent-dark transition-colors duration-500 flex items-center shadow-lg">
                 Contact <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
               </a>
-              <a href="#projects" className="border border-primary/10 px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:border-primary transition-all duration-500">
+              <a href="#projects" className="border border-primary/10 px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:border-primary transition-colors duration-500">
                 View Projects
               </a>
             </motion.div>
@@ -321,7 +323,7 @@ export default function Home() {
               key={i} 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={viewportConfig}
               transition={{ duration: 0.8, delay: i * 0.15 }}
               className="flex flex-col"
             >
@@ -339,7 +341,7 @@ export default function Home() {
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -40 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={viewportConfig}
               transition={{ duration: 1 }}
             >
               <h3 className="text-4xl font-bold mb-10 tracking-tight leading-tight">Bridging the gap between physical operations and data logic.</h3>
@@ -363,7 +365,7 @@ export default function Home() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={viewportConfig}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
               {expertise.map((item, i) => (
@@ -371,7 +373,7 @@ export default function Home() {
                   key={i}
                   variants={itemVariants}
                   whileHover={{ y: -12, borderColor: "rgba(123, 159, 153, 0.6)" }}
-                  className="p-8 bg-white/30 border border-muted/10 rounded-3xl transition-all duration-700 group shadow-sm hover:shadow-xl"
+                  className="p-8 bg-white/30 border border-muted/10 rounded-3xl group shadow-sm hover:shadow-xl transition-shadow duration-500"
                 >
                   <div className="text-accent-dark mb-6 group-hover:scale-110 transition-transform duration-500">{item.icon}</div>
                   <h4 className="font-bold text-sm uppercase tracking-tight mb-4">{item.category}</h4>
@@ -396,7 +398,7 @@ export default function Home() {
           <motion.div 
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 30 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={viewportConfig}
             transition={{ duration: 1 }}
             className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6"
           >
@@ -411,10 +413,10 @@ export default function Home() {
                 key={i} 
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 50 }}
-                viewport={{ once: true, amount: 0.1 }}
+                viewport={viewportConfig}
                 transition={{ duration: 1, delay: i * 0.15 }}
                 whileHover={{ x: 15 }}
-                className="group p-10 bg-white/40 border border-muted/10 rounded-[2.5rem] hover:bg-white/60 transition-all duration-1000 flex flex-col md:flex-row gap-12 shadow-sm hover:shadow-2xl"
+                className="group p-10 bg-white/40 border border-muted/10 rounded-[2.5rem] flex flex-col md:flex-row gap-12 shadow-sm hover:shadow-2xl transition-shadow duration-1000"
               >
                 <div className="md:w-1/3">
                   <div className="text-accent-dark text-[10px] font-bold uppercase tracking-widest mb-4">{project.category}</div>
@@ -427,7 +429,7 @@ export default function Home() {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-primary/70 leading-relaxed text-lg mb-8">{project.description}</p>
-                  <button className="flex items-center text-xs font-bold uppercase tracking-widest group-hover:text-accent-dark transition duration-500">
+                  <button className="flex items-center text-xs font-bold uppercase tracking-widest group-hover:text-accent-dark transition-colors duration-500">
                     Read detailed scope <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-500" />
                   </button>
                 </div>
@@ -443,7 +445,7 @@ export default function Home() {
           <motion.h2 
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -40 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={viewportConfig}
             transition={{ duration: 1 }}
             className="text-5xl font-bold tracking-tighter mb-20"
           >
@@ -457,7 +459,7 @@ export default function Home() {
                 key={i} 
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 40 }}
-                viewport={{ once: true, amount: 0.1 }}
+                viewport={viewportConfig}
                 transition={{ duration: 0.8 }}
                 className="group relative pl-8 md:pl-20"
               >
@@ -468,7 +470,7 @@ export default function Home() {
                     <motion.h4 
                       whileHover={{ color: "#7b9f99" }}
                       transition={{ duration: 0.4 }}
-                      className="text-2xl font-bold text-primary transition-colors cursor-default"
+                      className="text-2xl font-bold text-primary cursor-default"
                     >
                       {exp.role}
                     </motion.h4>
@@ -483,7 +485,7 @@ export default function Home() {
                       key={j} 
                       whileInView={{ opacity: 1, x: 0 }}
                       initial={{ opacity: 0, x: 15 }}
-                      viewport={{ once: true, amount: 0.1 }}
+                      viewport={viewportConfig}
                       transition={{ duration: 0.6, delay: j * 0.08 }}
                       className="flex items-start text-sm text-primary/80 leading-relaxed"
                     >
@@ -499,7 +501,7 @@ export default function Home() {
           <motion.div 
             whileInView={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.96 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={viewportConfig}
             transition={{ duration: 1 }}
             className="mt-32 p-12 bg-white/40 border border-muted/10 rounded-[3rem] shadow-sm relative overflow-hidden"
           >
@@ -513,7 +515,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 items-center">
               <motion.span 
                 whileHover={{ scale: 1.05 }}
-                className="px-6 py-2.5 bg-accent-dark text-background rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md transition-transform"
+                className="px-6 py-2.5 bg-accent-dark text-background rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md"
               >
                 First Class Honours
               </motion.span>
@@ -530,7 +532,7 @@ export default function Home() {
           <motion.h3 
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            viewport={{ once: true }}
+            viewport={viewportConfig}
             transition={{ duration: 1 }}
             className="text-[10px] uppercase tracking-[0.3em] font-bold text-muted mb-12"
           >
@@ -541,10 +543,10 @@ export default function Home() {
               href="#" 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={viewportConfig}
               whileHover={{ y: -8, backgroundColor: "rgba(176, 214, 208, 0.2)" }}
               transition={{ duration: 0.6 }}
-              className="p-10 bg-white/20 border border-muted/10 rounded-[2rem] transition-all duration-700 group shadow-sm flex flex-col justify-between"
+              className="p-10 bg-white/20 border border-muted/10 rounded-[2rem] group shadow-sm flex flex-col justify-between transition-colors duration-700"
             >
               <div>
                 <h4 className="text-2xl font-bold mb-2 group-hover:text-accent-dark transition-colors duration-500">ShopThip</h4>
@@ -556,10 +558,10 @@ export default function Home() {
               href="#" 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={viewportConfig}
               whileHover={{ y: -8, backgroundColor: "rgba(176, 214, 208, 0.2)" }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="p-10 bg-white/20 border border-muted/10 rounded-[2rem] transition-all duration-700 group shadow-sm flex flex-col justify-between"
+              className="p-10 bg-white/20 border border-muted/10 rounded-[2rem] group shadow-sm flex flex-col justify-between transition-colors duration-700"
             >
               <div>
                 <h4 className="text-2xl font-bold mb-2 group-hover:text-accent-dark transition-colors duration-500">Moo Pak Zap</h4>
@@ -577,7 +579,7 @@ export default function Home() {
           <motion.div 
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 60 }}
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={viewportConfig}
             transition={{ duration: 1.2 }}
             className="bg-primary rounded-[4rem] p-16 md:p-32 text-center relative overflow-hidden shadow-2xl"
           >
@@ -587,7 +589,7 @@ export default function Home() {
             <motion.h2 
               whileInView={{ y: 0, opacity: 1 }}
               initial={{ y: 30, opacity: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={viewportConfig}
               transition={{ duration: 1 }}
               className="text-5xl md:text-8xl font-bold text-background mb-10 tracking-tighter leading-none"
             >
@@ -596,7 +598,7 @@ export default function Home() {
             <motion.p 
               whileInView={{ opacity: 1 }}
               initial={{ opacity: 0 }}
-              viewport={{ once: true }}
+              viewport={viewportConfig}
               transition={{ duration: 1.2, delay: 0.3 }}
               className="text-background/60 text-lg mb-16 max-w-xl mx-auto font-medium"
             >
@@ -607,7 +609,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, color: "#b0d6d0" }}
                 transition={{ duration: 0.5 }}
                 href="mailto:theerapong.thana@outlook.com" 
-                className="flex items-center space-x-4 text-xl font-bold text-background transition-colors"
+                className="flex items-center space-x-4 text-xl font-bold text-background transition-colors duration-500"
               >
                 <Mail className="w-6 h-6" />
                 <span>theerapong.thana@outlook.com</span>
@@ -617,7 +619,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, color: "#b0d6d0" }}
                 transition={{ duration: 0.5 }}
                 href="tel:+66808314717" 
-                className="flex items-center space-x-4 text-xl font-bold text-background transition-colors"
+                className="flex items-center space-x-4 text-xl font-bold text-background transition-colors duration-500"
               >
                 <Phone className="w-6 h-6" />
                 <span>+66 80 831 4717</span>
