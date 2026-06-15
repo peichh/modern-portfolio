@@ -9,7 +9,6 @@ import {
   ChevronRight, 
   Briefcase, 
   Award, 
-  Code, 
   Database, 
   Settings, 
   GraduationCap, 
@@ -22,27 +21,27 @@ import {
 
 const translations = {
   en: {
-    brand: "Peach",
-    navAbout: "About",
-    navProjects: "Projects",
-    navResume: "Resume",
+    brand: "Operations Portfolio",
+    navAbout: "Expertise",
+    navProjects: "Case Studies",
+    navResume: "Experience",
     navContact: "Contact",
-    heroEyebrow: "Operations Data & Automation Specialist",
+    heroEyebrow: "Inventory Planning / Warehouse Operations / Data Automation",
     heroTitleFirst: "Theerapong",
     heroTitleLast: "Thanarodpaibun",
-    heroDescription: "I turn warehouse movement, inventory records, and planning inputs into practical operating systems: cleaner dashboards, faster reports, and sharper decisions.",
-    heroContact: "Contact",
-    heroViewProjects: "View Projects",
+    heroDescription: "I turn warehouse movement, inventory records, and planning inputs into practical operating systems: cleaner dashboards, faster reports, sharper stock decisions, and work teams can repeat.",
+    heroContact: "Email Peach",
+    heroViewProjects: "View Case Studies",
     statOne: "2d → 1h",
     statOneDesc: "Reporting Cycle Reduced",
     statTwo: "100%",
     statTwoDesc: "Inventory Accuracy",
     statThree: "Bangkok",
     statThreeDesc: "Based in",
-    aboutTitle: "Bridging the gap between physical operations and data logic.",
+    aboutTitle: "Built for roles where operations, data, and planning meet.",
     aboutP1: "Peach combines hands-on warehouse discipline with planning analytics. The profile is strongest where a team needs someone who understands physical stock movement, can diagnose data gaps, and can build simple tools that make daily decisions faster.",
     aboutFocus: "Current Focus",
-    aboutFocusText: "Inventory visibility, stock accuracy, and automated reporting flows.",
+    aboutFocusText: "Inventory visibility, stock accuracy, and automated reporting.",
     expertiseTitle: "Expertise",
     caseStudiesTitle: "Case Studies",
     caseStudiesSubtitle: "Measurable Operational Value",
@@ -55,7 +54,6 @@ const translations = {
     contactBannerSubtitle: "I'm looking for roles where operations, data, and planning meet. Let's connect and build something efficient.",
     footerText: "© 2026 Theerapong Thanarodpaibun",
     backToTop: "Back to top",
-    // Deep data
     projects: [
       {
         title: "Refreshable Reporting Pipeline",
@@ -139,16 +137,16 @@ const translations = {
     ]
   },
   th: {
-    brand: "Peach",
-    navAbout: "เกี่ยวกับ",
+    brand: "พอร์ตโฟลิโองาน Operations",
+    navAbout: "ความเชี่ยวชาญ",
     navProjects: "ผลงาน",
     navResume: "ประสบการณ์",
     navContact: "ติดต่อ",
-    heroEyebrow: "Operations Data & Automation Specialist",
+    heroEyebrow: "Inventory Planning / Warehouse Operations / Data Automation",
     heroTitleFirst: "Theerapong",
     heroTitleLast: "Thanarodpaibun",
-    heroDescription: "ผมเปลี่ยนงานคลังสินค้า ข้อมูลสต็อก และข้อมูลวางแผน ให้กลายเป็นระบบทำงานที่ใช้ได้จริง: dashboard ชัดขึ้น, report เร็วขึ้น และตัดสินใจเรื่อง stock ได้คมขึ้น",
-    heroContact: "ติดต่อ",
+    heroDescription: "ผมเปลี่ยนงานคลังสินค้า ข้อมูลสต็อก และข้อมูลวางแผน ให้กลายเป็นระบบทำงานที่ใช้ได้จริง: dashboard ชัดขึ้น, report เร็วขึ้น, ตัดสินใจเรื่อง stock ได้คมขึ้น และทีมทำซ้ำได้อย่างเป็นระบบ",
+    heroContact: "อีเมลหา Peach",
     heroViewProjects: "ดูผลงาน",
     statOne: "2 วัน → 1 ชม.",
     statOneDesc: "ลดรอบเวลาทำรายงาน",
@@ -156,10 +154,10 @@ const translations = {
     statTwoDesc: "ความแม่นยำสต็อก",
     statThree: "กรุงเทพฯ",
     statThreeDesc: "พร้อมรับงาน",
-    aboutTitle: "เชื่อมต่อระหว่างงาน Operations จริงและตรรกะข้อมูล",
+    aboutTitle: "เหมาะกับบทบาทที่เชื่อมงาน operations, data และ planning เข้าด้วยกัน",
     aboutP1: "Peach มีพื้นฐานจากงานคลังสินค้าจริงร่วมกับทักษะด้าน planning analytics จุดแข็งคือเข้าใจการเคลื่อนไหวของ stock หน้างาน มองเห็นช่องว่างของข้อมูล และสร้าง tool ง่าย ๆ ที่ช่วยให้ทีมตัดสินใจได้เร็วขึ้น",
     aboutFocus: "โฟกัสตอนนี้",
-    aboutFocusText: "Inventory visibility, stock accuracy และ automated reporting flows",
+    aboutFocusText: "Inventory visibility, stock accuracy และ automated reporting",
     expertiseTitle: "ความเชี่ยวชาญ",
     caseStudiesTitle: "ผลงานที่คัดเลือก",
     caseStudiesSubtitle: "สร้างคุณค่าให้ Operations แบบวัดผลได้",
@@ -172,24 +170,23 @@ const translations = {
     contactBannerSubtitle: "ผมกำลังมองหาบทบาทที่ Operations, Data และ Planning มาบรรจบกัน มาสร้างระบบที่มีประสิทธิภาพด้วยกันครับ",
     footerText: "© 2026 Theerapong Thanarodpaibun",
     backToTop: "กลับขึ้นบนสุด",
-    // Deep data
     projects: [
       {
         title: "Refreshable Reporting Pipeline",
         category: "Automation / Planning Analytics",
-        description: "สร้าง workflow ด้วย Power Query และ SQL เพื่อเตรียมรายงานแบบอัตโนมัติ ลดรอบเวลาทำงานจาก 2 วันเหลือเพียง 1 ชั่วโมง ลดความเสี่ยงจากการทำงาน manual และเพิ่ม visibility ด้วย dashboard ที่ใช้ซ้ำได้",
+        description: "สร้าง workflow ด้วย Power Query และ basic SQL เพื่อแทนการเตรียม report แบบ manual ลดเวลาทำรายงานประจำจาก 2 วันเหลือ 1 ชั่วโมง",
         tags: ["Power Query", "SQL", "Excel VBA"]
       },
       {
         title: "Spare Parts Location Planning",
         category: "Warehouse Optimization",
-        description: "วิเคราะห์ความถี่การเคลื่อนไหวของ part เพื่อแยก fast/slow/dead stock แล้วจัด location ใหม่ในคลังสินค้า ช่วยให้หยิบจ่ายได้เร็วขึ้นและควบคุมง่ายขึ้น",
+        description: "วิเคราะห์ความถี่การเคลื่อนไหวของ part เพื่อแยก fast-moving, slow-moving และ dead stock แล้วจัด location ใหม่ให้หยิบจ่ายเร็วขึ้นและควบคุมง่ายขึ้น",
         tags: ["Inventory Optimization", "Logistics", "Process Design"]
       },
       {
         title: "Budget vs Demand Logic Tool",
         category: "Demand / Capacity Planning",
-        description: "พัฒนา planning model เพื่อเทียบ capacity ของ resource กับ demand requirement ช่วยลดการใช้ดุลยพินิจแบบ manual และทำให้การจัดสรรทรัพยากรสอดคล้องกับงบประมาณ",
+        description: "พัฒนา planning model เพื่อเทียบ capacity ของ resource กับ demand requirement ช่วยลดการตัดสินใจแบบ manual และทำให้ allocation สอดคล้องขึ้น",
         tags: ["Forecasting", "Data Analytics", "Planning"]
       }
     ],
@@ -200,35 +197,35 @@ const translations = {
         period: "มี.ค. 2026 - ปัจจุบัน",
         description: "ดูแล inventory ของ IT server spare parts ตั้งแต่รับเข้า เบิกจ่าย รับคืน ตรวจนับ ควบคุม location และ reconcile ระหว่าง stock จริงกับ record",
         details: [
-          "จัดการงานรับเข้า เบิกจ่าย รับคืน ตรวจนับรอบ และ reconcile ข้อมูลสต็อกสำหรับ IT server spare parts",
-          "วิเคราะห์ประวัติการเคลื่อนไหวเพื่อแยกประเภท fast/slow/dead stock เพื่อการจัดเก็บและเติมสินค้าที่ชัดเจน",
-          "จัด location ใหม่ตามความถี่การหยิบ เพื่อลดระยะเดินและเพิ่มความรวดเร็วในการเข้าถึงสินค้า",
-          "จัดทำรายงาน inventory และ operations ครอบคลุม stock movement, usage และ performance indicators",
-          "วางมาตรฐานการจัดเก็บและการจัดการ spare parts เพื่อให้ process การทำงานสม่ำเสมอ"
+          "ดูแล inbound receiving, outbound issuance, returns, cycle count และ inventory record reconciliation สำหรับ IT server spare parts",
+          "วิเคราะห์ movement history เพื่อแยก fast-moving, slow-moving และ dead stock สำหรับการจัดเก็บและเติมสินค้าให้ชัดขึ้น",
+          "จัด location ในคลังใหม่ตามความถี่การหยิบ เพื่อลดระยะเดินและทำให้ spare parts เข้าถึงง่ายขึ้น",
+          "จัดทำรายงาน inventory และ operations ประจำ ครอบคลุม stock movement, usage, outstanding items และ performance indicators",
+          "วางมาตรฐานการจัดเก็บ การจัดการ spare parts และ routine การ update inventory เพื่อให้ process สม่ำเสมอขึ้น"
         ]
       },
       {
         role: "Capacity Planner",
         company: "HANESBRANDS ROH ASIA LTD.",
         period: "ก.พ. 2025 - ก.พ. 2026",
-        description: "สร้าง automated reporting และ planning tools ด้วย Power Query, SQL และ Excel เพื่อเพิ่ม visibility ด้าน budget, demand และ resource",
+        description: "สร้าง automated reporting และ planning tools ด้วย Power Query, basic SQL และ Excel logic เพื่อเพิ่ม visibility ด้าน budget, demand และ resource",
         details: [
-          "สร้าง automated reporting pipeline ด้วย Power Query และ SQL สำหรับจัดการข้อมูลวางแผน",
-          "แทนที่การเตรียมรายงานแบบ manual ด้วย dashboard ที่ใช้ซ้ำได้ ลดเวลาทำงานจาก 2 วันเหลือ 1 ชั่วโมง",
-          "สร้าง planning tool แบบ logic-based เพื่อเปรียบเทียบ budget, demand และทรัพยากรที่มีอยู่",
-          "เพิ่มความชัดเจนในการวางแผนด้วยการจัดมาตรฐาน source data และขั้นตอนการ transform ข้อมูล"
+          "สร้าง automated reporting pipeline ด้วย Power Query และ basic SQL สำหรับ extract, transform และ refresh planning data",
+          "แทนการทำ report manual ด้วย dashboard logic ที่ใช้ซ้ำได้ ลดเวลาทำรายงานจาก 2 วันเหลือ 1 ชั่วโมง",
+          "สร้าง planning tool แบบ logic-based เพื่อเปรียบเทียบ budget, demand และ available resources สำหรับ allocation decision",
+          "เพิ่ม planning visibility ด้วยการ standardize source data, transformation rules และ refresh routines"
         ]
       },
       {
         role: "Demand Planner",
         company: "HANESBRANDS ROH ASIA LTD.",
         period: "มิ.ย. 2024 - ธ.ค. 2024",
-        description: "วิเคราะห์ sales trend, ติดตามระดับสต็อก, เปิดใบสั่งผลิต และวิเคราะห์สาเหตุการยกเลิก order ด้วย root cause analysis",
+        description: "วิเคราะห์ sales trend, monitor inventory threshold, เปิด production order และวิเคราะห์สาเหตุ order cancellation ด้วย root cause analysis",
         details: [
-          "วิเคราะห์แนวโน้มการขายด้วย Pivot Tables เพื่อสนับสนุนการวางแผน demand และจังหวะการผลิต",
-          "ติดตามระดับสต็อกและเปิด production order สำหรับสินค้าที่ต่ำกว่า safety level เพื่อลด stockout risk",
-          "วิเคราะห์สาเหตุการยกเลิก order (Root Cause Analysis) เช่น factory delay หรือ warehouse discrepancy",
-          "สนับสนุนการวางแผนโดยเชื่อมโยง demand signal เข้ากับระดับสต็อกและความต้องการผลิต"
+          "วิเคราะห์ sales trend ด้วย Excel Pivot Tables เพื่อ support demand planning และ timing ของ production order",
+          "ติดตาม inventory threshold และ initiate production order สำหรับ style ที่ต่ำกว่า safety level เพื่อลด stockout risk",
+          "วิเคราะห์ order cancellation ด้วย root cause analysis เช่น factory delay และ warehouse discrepancy",
+          "สนับสนุน planning review ด้วยการเชื่อม demand signal เข้ากับ inventory status และ production needs"
         ]
       }
     ],
@@ -291,23 +288,7 @@ export default function Home() {
   };
 
   const scrollToTop = () => {
-    const duration = 1200;
-    const start = window.pageYOffset;
-    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-    const easeInOutCubic = (t: number) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-
-    const scroll = () => {
-      const now = 'now' in window.performance ? performance.now() : new Date().getTime();
-      const time = Math.min(1, (now - startTime) / duration);
-      const timeFunction = easeInOutCubic(time);
-      window.scroll(0, Math.ceil(timeFunction * (0 - start) + start));
-
-      if (window.pageYOffset === 0 || time === 1) return;
-      requestAnimationFrame(scroll);
-    };
-
-    scroll();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const navLinks = [
@@ -422,7 +403,7 @@ export default function Home() {
               </a>
             ))}
             <div className="pt-12 flex flex-col items-center space-y-4 text-muted font-bold text-xs uppercase tracking-widest">
-              <a href="mailto:theerapong.thana@outlook.com">theerapong.thana@outlook.com</a>
+              <a href="mailto:Theerapong.thana@outlook.com">Theerapong.thana@outlook.com</a>
               <a href="tel:+66808314717">+66 80 831 4717</a>
             </div>
           </motion.div>
@@ -477,7 +458,7 @@ export default function Home() {
               transition={{ duration: 1, delay: 1.2 }}
               className="flex flex-wrap gap-6"
             >
-              <a href="#contact" className="group bg-primary text-background px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-muted transition-colors duration-500 flex items-center shadow-lg">
+              <a href="mailto:Theerapong.thana@outlook.com" className="group bg-primary text-background px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-muted transition-colors duration-500 flex items-center shadow-lg">
                 {t.heroContact} <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
               </a>
               <a href="#projects" className="border border-primary/20 px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:border-primary transition-colors duration-500">
@@ -714,7 +695,8 @@ export default function Home() {
           </motion.h3>
           <div className="grid md:grid-cols-2 gap-8">
             <motion.a 
-              href="#" 
+              href="https://peichh.github.io/shopthip-site/" 
+              target="_blank"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
               viewport={viewportConfig}
@@ -729,7 +711,8 @@ export default function Home() {
               <ExternalLink className="w-5 h-5 text-muted group-hover:text-primary transition-colors duration-500 self-end" />
             </motion.a>
             <motion.a 
-              href="#" 
+              href="https://poke.com/r/k0bZXR5tyJw" 
+              target="_blank"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
               viewport={viewportConfig}
@@ -782,11 +765,11 @@ export default function Home() {
               <motion.a 
                 whileHover={{ scale: 1.05, color: "#f9f2e2" }}
                 transition={{ duration: 0.5 }}
-                href="mailto:theerapong.thana@outlook.com" 
+                href="mailto:Theerapong.thana@outlook.com" 
                 className="flex items-center space-x-4 text-xl font-bold text-background transition-colors duration-500"
               >
                 <Mail className="w-6 h-6" />
-                <span>theerapong.thana@outlook.com</span>
+                <span>Theerapong.thana@outlook.com</span>
               </motion.a>
               <div className="hidden lg:block w-px h-10 bg-background/10" />
               <motion.a 
@@ -808,7 +791,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] text-muted uppercase tracking-[0.2em] font-bold">
           <p>{t.footerText}</p>
           <div className="flex space-x-10 mt-8 md:mt-0">
-            <a href="https://github.com/peichh" className="hover:text-primary transition-colors duration-500">Github</a>
+            <a href="https://github.com/peichh" target="_blank" className="hover:text-primary transition-colors duration-500">Github</a>
             <a href="#" className="hover:text-primary transition-colors duration-500">LinkedIn</a>
           </div>
         </div>
