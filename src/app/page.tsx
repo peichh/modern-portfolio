@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ExternalLink, ChevronRight, Github, Linkedin, Briefcase, Award, Code } from "lucide-react";
+import { Mail, Phone, ExternalLink, ChevronRight, Briefcase, Award, Code } from "lucide-react";
 
 export default function Home() {
   const projects = [
