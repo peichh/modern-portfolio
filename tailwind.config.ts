@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "var(--font-kanit)", "sans-serif"],
+        thai: ["var(--font-kanit)", "sans-serif"],
+      },
       colors: {
         background: "#f9f2e2", // Light cream
         primary: "#27695e",    // Deep forest/teal

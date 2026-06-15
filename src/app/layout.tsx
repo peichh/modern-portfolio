@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Kanit } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const kanit = Kanit({ 
+  weight: ["300", "400", "500", "600"],
+  subsets: ["thai", "latin"],
+  variable: "--font-kanit"
+});
 
 export const metadata: Metadata = {
   title: "Theerapong Thanarodpaibun | Portfolio",
@@ -15,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} ${kanit.variable}`}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
