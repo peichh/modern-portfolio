@@ -16,7 +16,8 @@ import {
   ArrowUp,
   Menu,
   X,
-  Globe
+  Globe,
+  Hammer
 } from "lucide-react";
 
 const translations = {
@@ -145,7 +146,7 @@ const translations = {
     heroEyebrow: "Inventory Planning / Warehouse Operations / Data Automation",
     heroTitleFirst: "Theerapong",
     heroTitleLast: "Thanarodpaibun",
-    heroDescription: "ผมเปลี่ยนงานคลังสินค้า ข้อมูลสต็อก และข้อมูลวางแผน ให้กลายเป็นระบบทำงานที่ใช้ได้จริง: dashboard ชัดขึ้น, report เร็วขึ้น, ตัดสินใจเรื่อง stock ได้คมขึ้น และทีมทำซ้ำได้อย่างเป็นระบบ",
+    heroDescription: "ฉันเปลี่ยนงานคลังสินค้าและข้อมูลวางแผน ให้เป็นระบบที่ใช้งานได้จริง: dashboard ชัดเจน, report รวดเร็ว และทีมทำงานซ้ำได้อย่างเป็นระบบ",
     heroContact: "อีเมลหา Peach",
     heroViewProjects: "ดูผลงาน",
     statOne: "2 วัน → 1 ชม.",
@@ -167,7 +168,7 @@ const translations = {
     educationHonours: "เกียรตินิยมอันดับ 1",
     labsTitle: "Public Experiments & Labs",
     contactBannerTitle: "พร้อมสำหรับงานถัดไปหรือยัง?",
-    contactBannerSubtitle: "ผมกำลังมองหาบทบาทที่ Operations, Data และ Planning มาบรรจบกัน มาสร้างระบบที่มีประสิทธิภาพด้วยกันครับ",
+    contactBannerSubtitle: "ฉันกำลังมองหาบทบาทที่ Operations, Data และ Planning มาบรรจบกัน มาสร้างระบบที่มีประสิทธิภาพด้วยกันค่ะ",
     footerText: "© 2026 Theerapong Thanarodpaibun",
     backToTop: "กลับขึ้นบนสุด",
     projects: [
@@ -249,6 +250,11 @@ const translations = {
         category: "Process Design",
         skills: ["Dynamics NAV", "Workflow Standardization", "Documentation", "Operating Routines"],
         icon: <Settings className="w-5 h-5" />
+      },
+      {
+        category: "Work Tools",
+        skills: ["Power BI", "Tableau", "ERP Systems", "Microsoft 365"],
+        icon: <Hammer className="w-5 h-5" />
       }
     ]
   }
